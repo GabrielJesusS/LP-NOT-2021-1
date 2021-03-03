@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modelo de documento HTML</title>
+    <script>
+        // 'use strict' impede que variáveis sejam declaradas
+        // sem o uso de let, var ou const
+        // Inicializar variáveis diretamente é má prática de
+        // programação
+        'use strict'
+        
+        /*
+            Solicite ao usuário para informar dois números e um operador
+            matemático. Você usará três prompt(), um para cada número e
+            o terceiro para o operador.
+            Aceite os seguintes operadores:
+            + => adição
+            - => subtração
+            *, X ou x => multiplicação
+            / ou : => divisão
+            Efetue o cálculo apropriado de acordo com o operador informado
+            e informe o resultado usando document.write().
+        */
+
+       let num = Number(prompt("Digite um número:"))
+       let num2 = Number(prompt("Digite outro número:"))
+       let txtop = prompt("Digite um operador matemático:")
+       let op = 0
+
+       if(isNaN(num) || isNaN(num2)){
+           alert("Número inválido")
+       }else{
+       switch (txtop){
+           case "+":
+               alert(num+num2)
+               break;
+
+            case "-":
+                alert(num-num2)
+                break;
+
+            case "*":
+                alert(num*num2)
+                break;
+
+            case "x":
+                alert(num*num2)
+                break;
+
+            case "X":
+                alert(num*num2)
+                break;
+                
+            case "/":
+                alert(num/num2)
+                break;
+            
+            case ":":
+                alert(num/num2)
+                break;
+            default:
+                alert("O operador é inválido")
+       } 
+    }
+
+
+
+
+
+
+
+
+
+       /*
+       if(txtop === "+"){ 
+        op = 0
+       }else if(txtop === "-"){
+           op = 1
+       }else if(txtop === "*" || txtop === "X" || txtop === "x"){
+           op = 2
+       }else if(txtop === "/"){
+           op = 3
+       }else{
+           alert("Operador inválido")
+       }
+       */
+
+
+
+
+
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
