@@ -41,52 +41,54 @@
 
         */
         let i = 0
+        let num
     while(i == 0){
-        let num = parseInt(prompt("Digite um número de 0 a 9"))
+         num = parseInt(prompt("Digite um número de 0 a 9"))
 
         if(isNaN(num) || num < 0 || num > 9){
             alert("O valor digitado não é valido")
         }else{
+
             i = 1
         }
     }
 
-    let p = 0
+    let p
     switch(num){
 
         case 0:
-            p = A
+            p = "A"
             break;
         case 1:
-            p = B
+            p = "B"
             break;
         case 2:
-            p = C
+            p = "C"
             break;
         case 3:
-            p = D
+            p = "D"
             break;
         case 4:
-            p = E
+            p = "E"
             break;
         case 5:
-            p = F
+            p = "F"
             break;
         case 6:
-            p = G
+            p = "G"
             break;
         case 7:
-            p = H
+            p = "H"
             break;
         case 8:
-            p = I
+            p = "I"
             break;
         case 9:
-            p = J
+            p = "J"
             break;
     }
 
-    alert(`${p}`)
+    alert(`A letra correspondente é ${p}`)
     </script>
 </head>
 <body>

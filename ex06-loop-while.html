@@ -26,6 +26,31 @@
             de atendimento ao usuário da AUTOBURACON S/A.
 
         */
+        let i = 0
+        let num
+        while(i == 0){
+            num = parseInt(prompt("Digite o comprimento da rodovia maior que 200Km:"))
+
+            if(isNaN(num) || num < 200){
+                alert("O valor digitado não é valido")
+            }else{
+                i = 1}
+            }
+        let p = 0
+        let a = 0
+
+        document.write('Teremos um pedágio nos km:')
+        while(p < num){
+            document.write(`<br> ${p}`)
+            p +=31
+        }
+
+        document.write('<hr>')
+
+        while(a < num){
+            document.write(`<br> ${a}`)
+            a +=23
+        }
 
     </script>
 </head>
