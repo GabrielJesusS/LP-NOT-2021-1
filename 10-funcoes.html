@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página modelo</title>
+    <script>
+        //ativa verificações adcionais de variáveis
+        //Modo "Chato" do JS
+        'use strict'
+        
+        /*let fat5 = 1
+        for(let i = 5; i > 1; i--){
+            fat5 = fat5 * i
+        }
+
+        alert(`O fatorial de 5 é ${fat5}`)
+
+        let fat4 = 1
+        for(let i = 4; i > 1; i--){
+            fat4 = fat4 * i
+        }
+
+        alert(`O fatorial de 4 é ${fat4}`)*/
+
+        //Principio DRY = Don't repeat yourself(não se repita)
+        
+        //Função é um treecho de código que é escrito apenas uma vez e
+        //pode ser invocado (executado) várias vezes
+/*
+        function fatorial(num){ //declaração da função
+            let fat = 1
+            for(let i = num; i > 1 ; i--){
+
+                fat*=i //equivalente a fat = fat * i
+            }
+            return fat  //retorno da função
+        }
+
+        let x = fatorial(5) //chamada de função. O valor retornado será
+        // atribuido à variável x.
+        alert(`O fatorial de 5 calculado pela função é ${x}`)*/
+
+        let area 
+        function calcArea(base,altura, forma){
+            
+            switch(forma){
+                case 'Q': //quadrilátero
+                area = base*altura
+                    break;
+
+                case 'T': //Triângulo
+                area = base*altura/2
+                    break;
+
+                case 'E': //Elipse
+                area = (base / 2) * (altura / 2) * Math.PI
+                    break;
+                
+                default:
+                    area = NaN
+            }
+            return area
+        }
+            let areaTerreno = calcArea(8,25,"Q") //chamada da função
+            alert("Área do terreno é de "+ areaTerreno)
+            alert(`Área do triângulo : ${calcArea(7,5,"T")}`)
+            alert(`Área da Elipse : ${calcArea(2,3,"E")}`)
+        
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
