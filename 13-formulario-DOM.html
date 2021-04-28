@@ -99,16 +99,110 @@
         function validar(){
             //retorna true caso todos os campos do formulário tiverem sido corretamente preenchidos
             //ou false caso contrário
-            if(elPrimeiroNome.value == "") {
+            if(elPrimeiroNome.value === ""){
                 alert("Preencha o primeiro nome")
                 elPrimeiroNome.focus()
                 return false
             }
+
+            if(elSobreNome.value === ""){
+                alert("Preencha o sobrenome")
+                elSobreNome.focus()
+                return false
+            }
+            
+            if(elFormaTratamento.selectedIndex === 0){
+                alert("Selecione uma opção de forma de tratamento")
+                elFormaTratamento.focus()
+                return false
+            }
+
+            let horaDia = parseInt(elHoraDia.value)
+            if(isNaN(horaDia) || horaDia < 0 || horaDia > 23){
+                alert("Informe uma hora válida entre 0 e 23")
+                elHoraDia.focus()
+                return false
+            }
+
+            if((! elAlert.checked) && ( ! elDocument.checked)){
+                alert("Selecione pelo menos um modo de exibição")
+                elAlert.focus()
+                return false
+            }
+
+            return true
         }
 
-        enviar.addEventListener("click",validar())
+        function exibirMensagem(){
+            if(validar()){
 
+                let mensagem = ""
+                let horaDia = parseInt(elHoraDia.value)
+                if(horaDia <12){
+                    mensagem = "Bom dia, "
+                }else if(horaDia < 18){
+                    mensagem = "Boa tarde, "
+                }else{
+                    mensagem = "Boa noite, "
+                }
 
+                switch(elFormaTratamento.selectedIndex){
+                    case 1:
+                        mensagem += "Vossa majestade "
+                        break
+                    
+                    case 2:
+                        if(elFeminino.checked){
+                            mensagem += "Excelentíssima "
+                        }else{
+                            mensagem += "Excelentíssimo "
+                        }
+                        break
+
+                    case 3:
+                        if(elFeminino.checked){
+                            mensagem += "Ilustríssima "
+                        }else{
+                            mensagem += "Ilustríssimo "
+                        }
+                        break
+
+                    case 4:
+                        mensagem += "Vossa Senhoria "
+                        break
+
+                    case 5:
+                        if(elFeminino.checked){
+                            mensagem += "Senhora "
+                        }else{
+                            mensagem += "Senhor "
+                        }
+                        break
+
+                    case 6:
+                        if(elFeminino.checked){
+                            mensagem += "Cremosíssima "
+                        }else{
+                            mensagem += "Cremosíssimo "
+                        }
+                        break
+
+                }
+
+                mensagem += elPrimeiroNome.value+" "
+                mensagem += elSobreNome.value+"! Como posso ser útil?"
+            
+                if(elAlert.checked){
+                    alert(mensagem)
+                }
+                if(elDocument.checked){
+                    elSaudacao.innerHTML = mensagem
+                }
+            }
+
+        }
+
+        elEnviar.addEventListener('click', exibirMensagem)
 
 
     </script>
