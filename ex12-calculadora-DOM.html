@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página modelo</title>
+    <script>
+        //ativa verificações adcionais de variáveis
+        //Modo "Chato" do JS
+        'use strict'
+        
+    </script>
+</head>
+<body>
+
+    <h1>Calculadora DOM</h1>
+
+    <div>
+        <label for="num1">Primeiro número</label>
+        <input id="num1">
+    </div>
+    
+    <label for="oper">Operações</label>
+    <select id="oper">
+        <option>Selecione("""""")</option>
+        <option>Adição (+)</option>
+        <option>Subtração (-)</option>
+        <option>Multiplicação (x)</option>
+        <option>Divisão (/)</option>
+    </select>
+
+    <div>
+        <label for="num2">Segundo número</label>
+        <input id="num2">
+    </div>
+
+    <div>
+        <button id="calcular">Calcular</button>
+    </div>
+    
+    <div id="resultado"></div>
+
+    <script>
+        let txtNum1 = document.getElementById("num1")
+        let txtNum2 = document.getElementById("num2")
+        let oper = document.getElementById("oper")
+        let calcular = document.getElementById("calcular")
+        let resultado = document.getElementById("resultado")   
+        let total
+        let num1
+        let num2
+        
+
+        
+        function verificar(){
+             num1 = parseFloat(txtNum1.value)
+             num2 = parseFloat(txtNum2.value)
+
+            console.log(num1)
+            
+            if(isNaN(num1) || isNaN(num2)){
+                alert("Os valores digitados não são válidos!!!")
+                return false
+            }else if(oper.selectedIndex == 0){
+                alert("Por favor selecione uma operação!!!")
+                return false
+            }else{
+                return true
+            }
+            
+        }
+
+
+        function calculo(){
+
+            if(verificar()){
+                
+                let k = oper.selectedIndex
+                console.log(k)
+                switch (k){
+                    case 1:
+                        total = num1+num2
+                    break
+
+                    case 2:
+                        total = num1-num2
+                    break
+
+                    case 3:
+                        total = num1*num2
+                    break
+
+                    case 4:
+                        total = num1/num2
+                    break
+
+                }
+
+                resultado.innerHTML = ""
+                resultado.innerHTML += total
+            }
+        }
+
+        calcular.addEventListener("click", calculo)
+
+    </script>
+</body>
+</html>
