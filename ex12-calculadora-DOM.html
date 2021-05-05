@@ -4,6 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Página modelo</title>
+    <style>
+        .menu{
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
+    </style>
     <script>
         //ativa verificações adcionais de variáveis
         //Modo "Chato" do JS
@@ -15,7 +21,7 @@
 
     <h1>Calculadora DOM</h1>
 
-    <div>
+    <div class="menu">
         <label for="num1">Primeiro número</label>
         <input id="num1">
     </div>
@@ -29,16 +35,16 @@
         <option>Divisão (/)</option>
     </select>
 
-    <div>
+    <div class="menu">
         <label for="num2">Segundo número</label>
         <input id="num2">
     </div>
 
-    <div>
+    <div class="menu">
         <button id="calcular">Calcular</button>
     </div>
     
-    <div id="resultado"></div>
+    <div id="resultado" class="menu"></div>
 
     <script>
         let txtNum1 = document.getElementById("num1")
@@ -96,8 +102,8 @@
 
                 }
 
-                resultado.innerHTML = ""
-                resultado.innerHTML += total
+                
+                resultado.innerHTML = total
             }
         }
 
