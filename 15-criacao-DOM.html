@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página modelo</title>
+    
+</head>
+<body>
+    <h1>Criação de elementos HTML via Javascript</h1>
+    <p>Este arquivo demonstra como criar novos elementos HTML usando Javascript</p>
+    
+    <ul>
+        <li>Maçã</li>
+        <li>Banana</li>
+        <li>Uva</li>
+    </ul>
+
+    <script>
+        //ativa verificações adcionais de variáveis
+        //Modo "Chato" do JS
+        'use strict'
+        
+        /*
+        1) A criação do elemento, que é responsabilidade do proprietário(owner)
+        ou seja, do document
+        2)A incorporação do novo elemento na estrutura DOM é responsabilidade do pai(parent)
+        do novo elemento*/
+
+        //criando um novo elemento
+        const novoItem = document.createElement("li")
+
+        novoItem.textContent = "Laranja"
+
+        //capturando pai do novo elemento
+        const lista = document.querySelector("ul")
+        
+        //incorporando novo elemento como filho de seu pai
+        lista.appendChild(novoItem)
+
+        const novoItem2 = document.createElement("li")
+        novoItem2.textContent = "Jabuticaba"
+        lista.appendChild(novoItem2)
+
+        const novoItem3 = document.createElement("li")
+        novoItem3.textContent = "Morango"
+        lista.appendChild(novoItem3)
+
+        const novoParag = document.createElement("p")
+        novoParag.textContent = "Este parágrafo foi adicionado usando JavaScript"
+
+        document.body.appendChild(novoParag)
+
+        const novaDiv = document.createElement("div")
+        novaDiv.textContent = "Eu sou uma div"
+        novaDiv.style.background = "Red"
+        document.body.appendChild(novaDiv)
+
+        const novoItem4 = document.createElement("li")
+        novoItem4.textContent = "Amora"
+        lista.appendChild(novoItem4)
+
+        //conclusão : appendChild() sempre vai colocar o novo elemento como
+        // o último filho de seu pai.
+
+        const novoItem5 = document.createElement("li")
+        novoItem5.textContent = "Abacaxi"
+
+        //insertBefore() tem dois parâmetros:
+        //1 - O novo item a ser inserido
+        //2 - O item já existente que servirá de REFERENCIA para o local
+        //onde o novo item será inserido
+        lista.insertBefore(novoItem5,novoItem)
+
+        const novoItem6 = document.createElement("li")
+        novoItem6.textContent = "Abacate"
+        lista.insertBefore(novoItem6, novoItem3)
+
+        const novoParag2 = document.createElement("p")
+        novoParag2.textContent = "Este parágrafo foi inserido aqui com insertBefore()"
+
+        document.body.insertBefore(novoParag2, lista)
+
+        //inserindo um novo elemento no início da lista
+        const novoItem7 = document.createElement("li")
+        novoItem7.textContent = "Caju"
+
+        // usando o querySelector() para pegar o primeiro elemento do tipo
+        const itemMaca = document.querySelector("li")
+        lista.insertBefore(novoItem7, itemMaca)
+
+        const novoItem8 = document.createElement("li")
+        novoItem8.textContent = "Ameixa"
+        //captura todos os elementos do tipo especificado e retorna
+        // um vetor contendo todos eles.
+        const todosItens = document.querySelectorAll("li")
+
+        lista.insertBefore(novoItem8, todosItens[3])
+
+
+        
+
+    </script>
+</body>
+</html>
