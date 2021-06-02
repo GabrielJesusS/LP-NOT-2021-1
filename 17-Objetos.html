@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Objetos</title>
+    <script>
+        //ativa verificações adcionais de variáveis
+        //Modo "Chato" do JS
+        'use strict'
+        
+        const paciente1 = ["Bartira Barbosa", 40, "F", "bartirab@gmail.com", 1.67, 56]
+        const paciente2 = ["Asdrubal Azevedo", 67, "M", null, 1.78, 95]
+        const paciente3 = ["Lindomar Lustosa", 33, "M", "Lindomar@gmail.com", 1.63, 58]
+        const paciente4 = ["Euripa Emiliano", 55, "F", "euripae@gmail.com", 1.8, 89]
+
+        //calculando o IMC do paciente 3 (imc = peso / (altura)²)
+        let imc3 = paciente3[5] / (paciente3[4] ** 2)
+        document.write(`O IMC do paciente ${paciente3[0]} é ${imc3}<br><hr>`)
+
+        //criação de um objeto vazio
+        const objPaciente1 = {}
+        const objPaciente2 = new Object()
+
+        objPaciente1.nome = "Bartira Barbosa"
+        objPaciente1.idade = 40
+        objPaciente1.sexo = "F"
+        objPaciente1.email = "bartirab@gmail.com"
+        objPaciente1.altura = 1.67
+        objPaciente1.peso = 56
+
+
+        objPaciente2.nome = "Asdrubal Azevedo "
+        objPaciente2.idade = 67
+        objPaciente2.sexo = "M"
+        objPaciente2.email = "null"
+        objPaciente2.altura = 1.78
+        objPaciente2.peso = 95
+
+        const objPaciente3 = {
+            nome: "Lindomar Lustosa",
+            idade: 33,
+            sexo: "M",
+            email: "lindomar@hotmail.com",
+            altura : 1.63,
+            peso : 58
+        }
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

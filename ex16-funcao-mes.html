@@ -8,7 +8,8 @@
 <body>
     <h1>Meses</h1>
 
-    <select name="numMeses" id="meses" size="12">
+    <select name="numMeses" id="meses">
+        <option value="sel">(selecione)</option>
         <option value="jan">1</option>
         <option value="fev">2</option>
         <option value="mar">3</option>
@@ -58,7 +59,7 @@
 
       function mostrar(){
 
-        resultado.textContent = mes[numMes.selectedIndex]
+        resultado.textContent = mes[numMes.selectedIndex-1]
         
       }
 
