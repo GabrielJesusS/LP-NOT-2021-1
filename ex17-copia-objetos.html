@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página modelo</title>
+    <script>
+        //ativa verificações adcionais de variáveis
+        //Modo "Chato" do JS
+        'use strict'
+
+        let pet1 = {
+            nome:"Dogo",
+            "raça":"Pinscher",
+            cor:"Preto",
+            sexo:"M",
+            "nome do pai":"Astolfo",
+            "nome da mãe":"Pitucha"
+        }
+
+        //let pet2 = pet1 não duplica o objeto
+
+
+        //Gera uma cópia de cada uma das propriedades de pet1 em pet2
+        let pet2 = {...pet1}
+
+    
+        pet2.nome = "Nega"
+        pet2.sexo = "F"
+        pet2["nome da mãe"] = "lola"
+
+
+        for(let dog in pet1){
+            document.write(`${dog} => ${pet1[dog]}<br>`)
+        }
+            document.write("<br>")
+        for(let dog in pet2){
+            document.write(`${dog} => ${pet2[dog]}<br>`)
+        }
+
+
+
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
